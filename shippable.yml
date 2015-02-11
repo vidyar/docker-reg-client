@@ -1,0 +1,19 @@
+language: go
+
+go:
+  - 1.4
+
+install:
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/jstemmer/go-junit-report
+  - go get github.com/t-yuki/gocover-cobertura
+  - go get github.com/stretchr/testify/assert
+
+before_scripts:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+
+script:
+  - export PATH=$PATH:$GOPATH/bin
+  - go test -v -coverprofile=coverage.txt -covermode count ./registry | go-junit-report > ./shippable/testresults/junit.xml
+  - gocover-cobertura < coverage.txt > ./shippable/codecoverage/coverage.xml
