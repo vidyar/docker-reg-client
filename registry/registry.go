@@ -1,4 +1,4 @@
-package registry // import "github.com/CenturyLinkLabs/docker-reg-client/registry"
+package registry // import "github.com/vidyar/go_app/registry"
 
 import (
 	"bytes"
