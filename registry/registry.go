@@ -1,4 +1,4 @@
-package registry // import "github.com/vidyar/go_app/registry"
+package registry // import "github.com/vidyar/docker-reg-client/registry"
 
 import (
 	"bytes"
