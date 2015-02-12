@@ -17,3 +17,5 @@ script:
   - export PATH=$PATH:$GOPATH/bin
   - go test -v -coverprofile=coverage.txt -covermode count ./registry | go-junit-report > ./shippable/testresults/junit.xml
   - gocover-cobertura < coverage.txt > ./shippable/codecoverage/coverage.xml
+
+archive: true
