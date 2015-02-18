@@ -16,7 +16,7 @@ func TestBasicAuth(t *testing.T) {
 	auth.ApplyAuthentication(req)
 
 	u, p, _ := req.BasicAuth()
-	assert.Equal(t, username, u)
+	assert.Equal(t, username, up)
 	assert.Equal(t, password, p)
 }
 
